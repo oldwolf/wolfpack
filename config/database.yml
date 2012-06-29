@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: wolfpack_development
+  pool: 5
+  username: postgres
+  password: abcd123
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: wolfpack_test
+  pool: 5
+  username: postgres
+  password: abcd123
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: wolfpack
+  pool: 5
+  username: postgres
+  password: abcd123
+
+cucumber:
+  <<: *test
