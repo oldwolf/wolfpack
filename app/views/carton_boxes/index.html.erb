@@ -1,0 +1,41 @@
+<h1>Listing carton_boxes</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Length</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Box style</th>
+    <th>Material code</th>
+    <th>Customer length</th>
+    <th>Customer width</th>
+    <th>Customer height</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @carton_boxes.each do |carton_box| %>
+  <tr>
+    <td><%= carton_box.id %></td>
+    <td><%= carton_box.name %></td>
+    <td><%= carton_box.length %></td>
+    <td><%= carton_box.width %></td>
+    <td><%= carton_box.height %></td>
+    <td><%= carton_box.box_style %></td>
+    <td><%= carton_box.material_code %></td>
+    <td><%= carton_box.customer_length %></td>
+    <td><%= carton_box.customer_width %></td>
+    <td><%= carton_box.customer_height %></td>
+    <td><%= link_to 'Show', carton_box %></td>
+    <td><%= link_to 'Edit', edit_carton_box_path(carton_box) %></td>
+    <td><%= link_to 'Destroy', carton_box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Carton box', new_carton_box_path %>

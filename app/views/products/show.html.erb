@@ -1,0 +1,19 @@
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Wolfpack", root_path %> <span class="divider">/</span>
+  </li>
+  <li>
+    <%= link_to "Product", products_url %> <span class="divider">/</span>
+  </li>
+  <li class="active">Show</li>
+</ul>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+
+<%= link_to edit_product_path(@product), :class => 'btn btn-mini btn-primary' do %>
+  Edit <i class='icon-pencil icon-white'></i>
+<% end %>

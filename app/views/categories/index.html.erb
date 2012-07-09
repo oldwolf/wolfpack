@@ -1,0 +1,35 @@
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Wolfpack", root_path %> <span class="divider">/</span>
+  </li>
+  <li class="active">Category</li>
+</ul>
+
+<table class="table table-striped table-bordered table-condensed">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Created at</th>
+    <th></th>
+  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= link_to category.name, category_path(category) %></td>
+      <td><%= category.created_at %></td>
+      <td>
+        <%= link_to edit_category_path(category), :class => 'btn btn-mini btn-primary' do %>
+          Edit <i class='icon-pencil icon-white'></i>
+        <% end %>
+        <%= link_to category_path(category), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' do %>
+        Delete <i class='icon-trash icon-white'></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to new_category_path, :class => 'btn btn-primary' do %>
+  New <i class="icon-plus icon-white"></i>
+<% end %>

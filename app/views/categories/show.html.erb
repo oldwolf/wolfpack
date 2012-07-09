@@ -1,0 +1,18 @@
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Wolfpack", root_path %> <span class="divider">/</span>
+  </li>
+  <li>
+    <%= link_to "Category", categories_url %> <span class="divider">/</span>
+  </li>
+  <li class="active">Show</li>
+</ul>
+
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

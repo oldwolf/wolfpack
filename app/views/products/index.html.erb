@@ -1,0 +1,43 @@
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Wolfpack", root_path %> <span class="divider">/</span>
+  </li>
+  <li class="active">Product</li>
+</ul>
+
+<table class="table table-striped table-bordered table-condensed">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Stocked</th>
+    <th>Sale</th>
+    <th>Purchase</th>
+    <th>Type</th>
+    <th>Created at</th>
+    <th></th>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= link_to product.name, product_path(product) %></td>
+      <td><%= product.stocked %></td>
+      <td><%= product.sale %></td>
+      <td><%= product.purchase %></td>
+      <td><%= product.type %></td>
+      <td><%= product.created_at %></td>
+      <td>
+        <%= link_to edit_product_path(product), :class => 'btn btn-mini btn-primary' do %>
+          Edit <i class='icon-pencil icon-white'></i>
+        <% end %>
+        <%= link_to product_path(product), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' do %>
+        Delete <i class='icon-trash icon-white'></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to new_product_path, :class => 'btn btn-primary' do %>
+  New <i class="icon-plus icon-white"></i>
+<% end %>

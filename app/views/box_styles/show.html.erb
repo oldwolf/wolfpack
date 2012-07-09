@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @box_style.name %>
+</p>
+
+<p>
+  <b>Draft drawing:</b>
+  <%= @box_style.draft_drawing %>
+</p>
+
+
+<%= link_to 'Edit', edit_box_style_path(@box_style) %> |
+<%= link_to 'Back', box_styles_path %>

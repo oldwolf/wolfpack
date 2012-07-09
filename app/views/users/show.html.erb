@@ -1,4 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Wolfpack", root_path %> <span class="divider">/</span>
+  </li>
+  <li>
+    <%= link_to "User", users_url %> <span class="divider">/</span>
+  </li>
+  <li class="active">Show</li>
+</ul>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

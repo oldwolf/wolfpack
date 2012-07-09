@@ -1,0 +1,25 @@
+<ul class="nav nav-pills">
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="icon icon-folder-open"></i> Application Setup <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li class="nav-header">Security</li>
+      <li>
+        <%= link_to '<i class="icon-list icon"></i> User'.html_safe, users_url %>
+      </li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="icon icon-folder-open"></i> Master Data <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to '<i class="icon-list icon"></i> Category'.html_safe, categories_url %>
+        <%= link_to '<i class="icon-list icon"></i> Product'.html_safe, products_url %>
+      </li>
+    </ul>
+  </li>
+</ul>

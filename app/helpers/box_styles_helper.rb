@@ -1,0 +1,2 @@
+module BoxStylesHelper
+end

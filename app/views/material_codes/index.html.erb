@@ -1,0 +1,23 @@
+<h1>Listing material_codes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @material_codes.each do |material_code| %>
+  <tr>
+    <td><%= material_code.name %></td>
+    <td><%= link_to 'Show', material_code %></td>
+    <td><%= link_to 'Edit', edit_material_code_path(material_code) %></td>
+    <td><%= link_to 'Destroy', material_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Material code', new_material_code_path %>

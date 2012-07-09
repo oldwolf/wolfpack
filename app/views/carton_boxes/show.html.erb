@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Length:</b>
+  <%= @carton_box.length %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%= @carton_box.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @carton_box.height %>
+</p>
+
+<p>
+  <b>Box style:</b>
+  <%= @carton_box.box_style %>
+</p>
+
+<p>
+  <b>Material code:</b>
+  <%= @carton_box.material_code %>
+</p>
+
+<p>
+  <b>Customer length:</b>
+  <%= @carton_box.customer_length %>
+</p>
+
+<p>
+  <b>Customer width:</b>
+  <%= @carton_box.customer_width %>
+</p>
+
+<p>
+  <b>Customer height:</b>
+  <%= @carton_box.customer_height %>
+</p>
+
+
+<%= link_to 'Edit', edit_carton_box_path(@carton_box) %> |
+<%= link_to 'Back', carton_boxes_path %>
