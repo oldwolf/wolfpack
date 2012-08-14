@@ -4,6 +4,11 @@
       <i class="icon icon-folder-open"></i> Application Setup <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li class="nav-header">Basic Setup</li>
+      <li>
+        <%= link_to '<i class="icon-list icon"></i> Company'.html_safe, companies_url %>
+        <%= link_to '<i class="icon-list icon"></i> Currency'.html_safe, currencies_url %>
+      </li>
       <li class="nav-header">Security</li>
       <li>
         <%= link_to '<i class="icon-list icon"></i> User'.html_safe, users_url %>
@@ -21,7 +26,10 @@
       <li><%= link_to '<i class="icon-list icon"></i> List'.html_safe, partners_url %></li>
       <li class="nav-header">Product</li>
       <li><%= link_to '<i class="icon-list icon"></i> All'.html_safe, products_url %></li>
-      <li><%= link_to '<i class="icon-list icon"></i> Carton Box'.html_safe, carton_boxes_url %></li>
+      <li class="nav-header">Carton Box</li>
+      <li><%= link_to '<i class="icon-list icon"></i> List'.html_safe, carton_boxes_url %></li>
+      <li><%= link_to '<i class="icon-list icon"></i> Box Style'.html_safe, box_styles_url %></li>
+      <li><%= link_to '<i class="icon-list icon"></i> Material Code'.html_safe, material_codes_url %></li>
     </ul>
   </li>
 </ul>

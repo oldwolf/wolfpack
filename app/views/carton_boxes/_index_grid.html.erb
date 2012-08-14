@@ -21,7 +21,9 @@
     material_code.name if material_code
   end
 
-  g.column :name => 'Customer Length', :attribute => 'customer_length'
+  g.column :name => 'Customer Length', :attribute => 'customer_length' do |carton_box|
+    number_with_precision carton_box.customer_length, :precision => 0
+  end
 
   g.column :name => 'Customer Width', :attribute => 'customer_width'
 

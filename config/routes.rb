@@ -1,4 +1,8 @@
 Wolfpack::Application.routes.draw do
+  resources :companies
+
+  resources :currencies
+
   resources :partners
 
   resources :material_codes

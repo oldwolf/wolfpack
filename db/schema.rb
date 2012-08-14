@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814071051) do
+ActiveRecord::Schema.define(:version => 20120814084629) do
 
   create_table "box_styles", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,29 @@ ActiveRecord::Schema.define(:version => 20120814071051) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.decimal  "manufacturing_lead"
+    t.string   "email"
+    t.string   "website"
+    t.string   "registration_no"
+    t.integer  "currency_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "companies", ["currency_id"], :name => "index_companies_on_currency_id"
+
+  create_table "currencies", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.decimal  "rounding"
+    t.boolean  "active"
+    t.integer  "accuracy"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "material_codes", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -48,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20120814071051) do
 
   create_table "partners", :force => true do |t|
     t.string   "name"
-    t.decimal  "credit_limit",    :precision => 10, :scale => 6
+    t.decimal  "credit_limit",    :precision => 16, :scale => 6
     t.boolean  "is_supplier"
     t.boolean  "active",                                         :default => true
     t.integer  "agent_id"
