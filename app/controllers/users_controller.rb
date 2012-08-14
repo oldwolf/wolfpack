@@ -2,12 +2,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+		@users_grid = initialize_grid(User,
+			:order => 'users.username',
+			:order_direction => 'asc',
+			:per_page => 10,
+      :enable_export_to_csv => true,
+      :csv_file_name => 'user_list'
+		)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
+    export_grid_if_requested(:grid => 'index_grid')
   end
 
   # GET /users/1

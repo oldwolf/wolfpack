@@ -2,12 +2,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+		@products_grid = initialize_grid(Product,
+			:order => 'products.name',
+			:order_direction => 'asc',
+			:per_page => 10,
+      :enable_export_to_csv => true,
+      :csv_file_name => 'product_list'
+		)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
-    end
+    export_grid_if_requested(:grid => 'index_grid')
   end
 
   # GET /products/1

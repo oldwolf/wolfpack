@@ -1,13 +1,20 @@
 class CartonBoxesController < ApplicationController
+  autocomplete :box_style, :name
+  autocomplete :material_code, :name
+
   # GET /carton_boxes
   # GET /carton_boxes.json
   def index
-    @carton_boxes = CartonBox.all
+		@carton_boxes_grid = initialize_grid(CartonBox,
+			:order => 'view_carton_boxes.name',
+      :include => [:box_style, :material_code],
+			:order_direction => 'asc',
+			:per_page => 10,
+      :enable_export_to_csv => true,
+      :csv_file_name => 'carton_box_list'
+		)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @carton_boxes }
-    end
+    export_grid_if_requested(:grid => 'index_grid')
   end
 
   # GET /carton_boxes/1
