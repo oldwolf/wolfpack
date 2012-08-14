@@ -1,12 +1,12 @@
-h1. WolfPack
+# WolfPack
 
 WolfPack is an ERP software focus on Corrugated Packaging Industry.
 
-h2. More Information
+## More Information
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-h2. Dependencies
+## Dependencies
 
 To use this application, you will need:
 
@@ -17,27 +17,35 @@ To use this application, you will need:
 
 h2. Installing the Application
 
-Setup the RVM
+RVM Setup
 
-Setup the postgresql
+Postgresql Setup
 
-h2. Getting Started
+Application Setup
+  % git clone https://github.com/oldwolf/wolfpack.git
+  % cd wolfpack
+  % bundle install
+  % rake db:create
+  % rake db:schema:load
+  % rails s
+
+## Getting Started
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-h2. Documentation and Support
+# Documentation and Support
 
 This is the only documentation.
 
-h4. Issues
+#### Issues
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-h2. Similar Projects
+## Similar Projects
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-h2. Contributing
+## Contributing
 
 If you make improvements to this application, please share with others.
 
@@ -48,10 +56,11 @@ If you make improvements to this application, please share with others.
 
 If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
 
-h2. Credits
+## Credits
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-h2. License
+## License
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+## About the Author
+[Wolftek Technology](http://www.wolftek.com.my) 
