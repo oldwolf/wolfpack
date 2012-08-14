@@ -22,12 +22,12 @@ RVM Setup
 Postgresql Setup
 
 Application Setup
-  % git clone https://github.com/oldwolf/wolfpack.git
-  % cd wolfpack
-  % bundle install
-  % rake db:create
-  % rake db:schema:load
-  % rails s
+    % git clone https://github.com/oldwolf/wolfpack.git
+    % cd wolfpack
+    % bundle install
+    % rake db:create
+    % rake db:schema:load
+    % rails s
 
 ## Getting Started
 
