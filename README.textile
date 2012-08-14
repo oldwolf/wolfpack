@@ -1,27 +1,25 @@
-h1. Wolfpack
+h1. WolfPack
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+WolfPack is an ERP software focus on Corrugated Packaging Industry.
 
 h2. More Information
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-h2. Required Gems
-
-This application requires this gem:
-
-* "rails":http://rubygems.org/gems/rails
-
 h2. Dependencies
 
 To use this application, you will need:
 
-* The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3.0.4 or newer)
+* RVM (Ruby Version Manager)
+* The Ruby language (version 1.9.2)
+* Rails (version 3.2.7 or newer)
+* Postgresql database server
 
 h2. Installing the Application
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Setup the RVM
+
+Setup the postgresql
 
 h2. Getting Started
 
