@@ -16,10 +16,12 @@
       <i class="icon icon-folder-open"></i> Master Data <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <%= link_to '<i class="icon-list icon"></i> Category'.html_safe, categories_url %>
-        <%= link_to '<i class="icon-list icon"></i> Product'.html_safe, products_url %>
-      </li>
+      <li><%= link_to '<i class="icon-list icon"></i> Category'.html_safe, categories_url %></li>
+      <li class="nav-header">Partner</li>
+      <li><%= link_to '<i class="icon-list icon"></i> List'.html_safe, partners_url %></li>
+      <li class="nav-header">Product</li>
+      <li><%= link_to '<i class="icon-list icon"></i> All'.html_safe, products_url %></li>
+      <li><%= link_to '<i class="icon-list icon"></i> Carton Box'.html_safe, carton_boxes_url %></li>
     </ul>
   </li>
 </ul>

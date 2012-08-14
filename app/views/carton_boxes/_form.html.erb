@@ -1,19 +1,23 @@
-<%= simple_form_for(@carton_box) do |f| %>
+<%= simple_form_for @carton_box, :validate => true, :html => { :class => 'form-inline' } do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :length %>
     <%= f.input :width %>
     <%= f.input :height %>
-    <%= f.association :box_style %>
-    <%= f.association :material_code %>
+    <%= f.input :box_style_name, :url => autocomplete_box_style_name_carton_boxes_path, :as => :autocomplete, :input_html => { :id_element => "#carton_box_box_style_id", :value => @box_style }, :label => 'Box Style' %>
+    <%= f.association :box_style, :as => :hidden %>
+    <%= link_to 'Lookup', '#carton_boxes_box_style_list', :class => 'btn', 'data-toggle' => 'modal' %>
+    <%= f.input :material_code_name, :url => autocomplete_material_code_name_carton_boxes_path, :as => :autocomplete, :input_html => { :id_element => "#carton_box_material_code_id", :value => @material_code }, :label => 'Material Code' %>
+    <%= f.association :material_code, :as => :hidden %>
+    <%= link_to 'Lookup', '#carton_boxes_material_code_list', :class => 'btn', 'data-toggle' => 'modal' %>
     <%= f.input :customer_length %>
     <%= f.input :customer_width %>
     <%= f.input :customer_height %>
-  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+<%= render 'lookup_table' %>

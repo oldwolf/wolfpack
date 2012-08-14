@@ -1,0 +1,20 @@
+<%= simple_form_for(@partner) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :credit_limit %>
+    <%= f.input :is_supplier %>
+    <%= f.input :active %>
+    <%= f.input :agent_id %>
+    <%= f.input :email %>
+    <%= f.input :website %>
+    <%= f.input :is_customer %>
+    <%= f.input :search_key %>
+    <%= f.input :registration_no %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

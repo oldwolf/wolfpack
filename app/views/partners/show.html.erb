@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @partner.name %>
+</p>
+
+<p>
+  <b>Credit limit:</b>
+  <%= @partner.credit_limit %>
+</p>
+
+<p>
+  <b>Is supplier:</b>
+  <%= @partner.is_supplier %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @partner.active %>
+</p>
+
+<p>
+  <b>Agent:</b>
+  <%= @partner.agent_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @partner.email %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @partner.website %>
+</p>
+
+<p>
+  <b>Is customer:</b>
+  <%= @partner.is_customer %>
+</p>
+
+<p>
+  <b>Search key:</b>
+  <%= @partner.search_key %>
+</p>
+
+<p>
+  <b>Registration no:</b>
+  <%= @partner.registration_no %>
+</p>
+
+
+<%= link_to 'Edit', edit_partner_path(@partner) %> |
+<%= link_to 'Back', partners_path %>

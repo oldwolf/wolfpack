@@ -1,9 +1,14 @@
 Wolfpack::Application.routes.draw do
+  resources :partners
+
   resources :material_codes
 
   resources :box_styles
 
-  resources :carton_boxes
+  resources :carton_boxes do
+    get :autocomplete_box_style_name, :on => :collection
+    get :autocomplete_material_code_name, :on => :collection
+  end
 
   resources :products
 

@@ -1,0 +1,13 @@
+<table class="table table-striped table-bordered table-condensed">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+
+  <% BoxStyle.all.each do |box_style| %>
+    <tr>
+      <td><%= box_style.id %></td>
+      <td><%= box_style.name %></td>
+    </tr>
+  <% end %>
+</table>

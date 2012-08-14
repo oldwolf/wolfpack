@@ -3,6 +3,5 @@ class Product < ActiveRecord::Base
 
   attr_accessible :name, :purchase, :sale, :stocked, :type
 
-  validates :name, :presence => true
-  validates :name, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => { :case_sensitive => false }
 end

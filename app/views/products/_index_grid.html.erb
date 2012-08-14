@@ -1,0 +1,20 @@
+<%= grid(@products_grid, :class => 'table table-bordered table-striped table-condensed', :upper_pagination_panel => true) do |g|
+  g.action_column
+
+  g.column :name => 'Name', :attribute => 'name', :in_csv => false do |product|
+    link_to product.name, edit_product_path(product)
+  end
+
+  g.column :name => 'Name', :attribute => 'name', :in_html => false do |product|
+    product.name
+  end
+
+  g.column :name => 'Type', :attribute => 'type'
+
+  g.column :name => 'Created at', :attribute => 'created_at'
+
+  g.column :in_csv => false do |product|
+    link_to('Edit', edit_product_path(product), :class => 'btn btn-mini btn-primary') + " " + 
+    link_to('Delete', product_path(product), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger')
+  end
+end -%>

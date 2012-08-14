@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703053714) do
+ActiveRecord::Schema.define(:version => 20120814071051) do
 
   create_table "box_styles", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,21 @@ ActiveRecord::Schema.define(:version => 20120703053714) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "partners", :force => true do |t|
+    t.string   "name"
+    t.decimal  "credit_limit",    :precision => 10, :scale => 6
+    t.boolean  "is_supplier"
+    t.boolean  "active",                                         :default => true
+    t.integer  "agent_id"
+    t.string   "email"
+    t.string   "website"
+    t.boolean  "is_customer"
+    t.string   "search_key"
+    t.string   "registration_no"
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
   end
 
   create_table "products", :force => true do |t|

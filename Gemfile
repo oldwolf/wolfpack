@@ -1,14 +1,19 @@
 require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
-gem 'rails', '3.2.6'
+gem 'rails', '~> 3.2.7'
 gem 'pg'
+gem 'thin'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-ui-themes'
 gem 'rspec-rails', '>= 2.10.1', :group => [:development, :test]
 gem 'factory_girl_rails', '>= 3.3.0', :group => [:development, :test]
 gem 'email_spec', '>= 1.2.1', :group => :test
@@ -43,3 +48,8 @@ gem 'therubyracer', :group => :assets, :platform => :ruby
 gem 'by_star'
 gem 'citier'
 gem 'rails_sql_views'
+gem 'client_side_validations', '~> 3.2.0.beta.3'
+gem 'client_side_validations-simple_form'
+gem 'wice_grid', '3.2.0.pre1'
+gem 'will_paginate'
+gem 'rails3-jquery-autocomplete'

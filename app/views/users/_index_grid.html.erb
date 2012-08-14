@@ -1,0 +1,24 @@
+<%= grid(@users_grid, :class => 'table table-bordered table-striped table-condensed', :upper_pagination_panel => true) do |g|
+  g.action_column
+
+  g.column :name => 'Username', :attribute => 'username', :in_csv => false do |user|
+    link_to user.username, edit_user_path(user)
+  end
+
+  g.column :name => 'Username', :attribute => 'username', :in_html => false do |user|
+    user.username
+  end
+
+  g.column :name => 'Name', :attribute => 'name'
+
+  g.column :name => 'Time Zone', :attribute => 'time_zone'
+
+  g.column :name => 'Email', :attribute => 'email'
+
+  g.column :name => 'Created at', :attribute => 'created_at'
+
+  g.column :in_csv => false do |user|
+    link_to('Edit', edit_user_path(user), :class => 'btn btn-mini btn-primary') + " " + 
+    link_to('Delete', user_path(user), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger')
+  end
+end -%>

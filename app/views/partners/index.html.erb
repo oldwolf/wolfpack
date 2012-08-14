@@ -1,0 +1,41 @@
+<h1>Listing partners</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Credit limit</th>
+    <th>Is supplier</th>
+    <th>Active</th>
+    <th>Agent</th>
+    <th>Email</th>
+    <th>Website</th>
+    <th>Is customer</th>
+    <th>Search key</th>
+    <th>Registration no</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @partners.each do |partner| %>
+  <tr>
+    <td><%= partner.name %></td>
+    <td><%= partner.credit_limit %></td>
+    <td><%= partner.is_supplier %></td>
+    <td><%= partner.active %></td>
+    <td><%= partner.agent_id %></td>
+    <td><%= partner.email %></td>
+    <td><%= partner.website %></td>
+    <td><%= partner.is_customer %></td>
+    <td><%= partner.search_key %></td>
+    <td><%= partner.registration_no %></td>
+    <td><%= link_to 'Show', partner %></td>
+    <td><%= link_to 'Edit', edit_partner_path(partner) %></td>
+    <td><%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Partner', new_partner_path %>

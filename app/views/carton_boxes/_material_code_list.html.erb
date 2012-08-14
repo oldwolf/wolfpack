@@ -1,0 +1,13 @@
+<table class="table table-striped table-bordered table-condensed">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+
+  <% MaterialCode.all.each do |material_code| %>
+    <tr>
+      <td><%= material_code.id %></td>
+      <td><%= material_code.name %></td>
+    </tr>
+  <% end %>
+</table>

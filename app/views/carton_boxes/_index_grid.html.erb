@@ -1,0 +1,40 @@
+<%= grid(@carton_boxes_grid, :class => 'table table-bordered table-striped table-condensed', :upper_pagination_panel => true) do |g|
+  g.action_column
+
+  g.column :name => 'Name', :attribute => 'name', :in_csv => false do |carton_box|
+    link_to carton_box.name, edit_carton_box_path(carton_box)
+  end
+
+  g.column :name => 'Name', :attribute => 'name', :in_html => false do |carton_box|
+    carton_box.name
+  end
+
+  g.column :name => 'Box Style', :attribute => 'name', :model => BoxStyle do |carton_box|
+    box_style =  carton_box.box_style
+
+    box_style.name if box_style
+  end
+
+  g.column :name => 'Material Code', :attribute => 'name', :model => MaterialCode do |carton_box|
+    material_code =  carton_box.material_code
+
+    material_code.name if material_code
+  end
+
+  g.column :name => 'Customer Length', :attribute => 'customer_length'
+
+  g.column :name => 'Customer Width', :attribute => 'customer_width'
+
+  g.column :name => 'Customer Height', :attribute => 'customer_height'
+
+  g.column :name => 'Length', :attribute => 'length'
+
+  g.column :name => 'Width', :attribute => 'width'
+
+  g.column :name => 'Height', :attribute => 'height'
+
+  g.column :in_csv => false do |carton_box|
+    link_to('Edit', edit_carton_box_path(carton_box), :class => 'btn btn-mini btn-primary') + " " + 
+    link_to('Delete', carton_box_path(carton_box), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger')
+  end
+end -%>
