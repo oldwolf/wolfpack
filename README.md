@@ -17,11 +17,11 @@ To use this application, you will need:
 
 h2. Installing the Application
 
-RVM Setup
+RVM Setup:
 
-Postgresql Setup
+Postgresql Setup:
 
-Application Setup
+Application Setup:
     % git clone https://github.com/oldwolf/wolfpack.git
     % cd wolfpack
     % bundle install
