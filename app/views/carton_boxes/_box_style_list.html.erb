@@ -7,7 +7,7 @@
   <% BoxStyle.all.each do |box_style| %>
     <tr>
       <td><%= box_style.id %></td>
-      <td><%= box_style.name %></td>
+      <td><%= link_to box_style.name, "#", :class => "link_to_update" %></td>
     </tr>
   <% end %>
 </table>

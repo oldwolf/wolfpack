@@ -2,11 +2,3 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-jQuery ->
-  $('#products').dataTable
-    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>"
-    sPaginationType: "bootstrap"
-    bJQueryUI: true
-    bProcessing: true
-    bServerSide: true
-    sAjaxSource: $('#products').data('source')

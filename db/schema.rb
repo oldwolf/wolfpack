@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814084629) do
+ActiveRecord::Schema.define(:version => 20120827082104) do
 
   create_table "box_styles", :force => true do |t|
     t.string   "name"
@@ -135,6 +135,17 @@ ActiveRecord::Schema.define(:version => 20120814084629) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "versions", :force => true do |t|
+    t.string   "item_type",  :null => false
+    t.integer  "item_id",    :null => false
+    t.string   "event",      :null => false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
 
   create_view "view_carton_boxes", "SELECT products.id, products.name, products.type, products.stocked, products.sale, products.purchase, products.created_at, products.updated_at, carton_boxes.length, carton_boxes.width, carton_boxes.height, carton_boxes.box_style_id, carton_boxes.material_code_id, carton_boxes.customer_length, carton_boxes.customer_width, carton_boxes.customer_height FROM products, carton_boxes WHERE (products.id = carton_boxes.id);", :force => true do |v|
     v.column :id
